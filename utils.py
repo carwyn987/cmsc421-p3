@@ -26,7 +26,7 @@ def load_image(path, scale):
         img = Image.open(path)
         new_width = int(img.width * float(scale))
         new_height = int(img.height * float(scale))
-        img = img.resize((new_width, new_height), Image.ANTIALIAS)
+        img = img.resize((new_width, new_height), Image.LANCZOS)
         return img, ImageTk.PhotoImage(img)
     except IOError as e:
         print(e)
